@@ -15,9 +15,9 @@ or
 ```
 ionic run android
 ```
-
-![Alt text](/img/MovieSearch_home.jpeg?raw=true "MovieSearch_home")
-
-![Alt text](/img/MovieSearch_detail.jpeg?raw=true "MovieSearch_detail")
-
-![Alt text](/img/MovieSearch_search.jpeg?raw=true "MovieSearch_search")
+### Home Page
+<img src="www/img/MovieSearch_home.jpeg" width="300">
+### Movie Detail Page
+<img src="www/img/MovieSearch_detail.jpeg" width="300">
+### Search Page
+<img src="www/img/MovieSearch_search.jpeg" width="300">
