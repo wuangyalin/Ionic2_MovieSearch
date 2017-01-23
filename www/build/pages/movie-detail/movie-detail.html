@@ -1,0 +1,77 @@
+<!--
+  Generated template for the MovieDetailPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>MovieDetail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-card>
+    <img src="{{movieInfo.image}}"/>
+    <ion-card-content>
+      <h2 class="card-title">
+        {{movieInfo.title}}
+      </h2>
+      <p>
+        {{movieInfo.description}}
+      </p>
+    </ion-card-content>
+    <div class="rating_box" item-right>
+      <span class="star-icon {{movieInfo.star1}}">☆</span>
+      <span class="star-icon {{movieInfo.star2}}">☆</span>
+      <span class="star-icon {{movieInfo.star3}}">☆</span>
+      <span class="star-icon {{movieInfo.star4}}">☆</span>
+      <span class="star-icon {{movieInfo.star5}}">☆</span>
+    </div>
+    <ion-row no-padding>
+      <ion-col>
+      <ion-badge item-right dark>{{movieInfo.vote}}/10</ion-badge>
+      </ion-col>
+      <ion-col text-right>
+        <button clear small dark>
+          <ion-icon name='happy'></ion-icon>
+          <span style="color: grey;">{{movieInfo.vote_count}} rated</span>
+        </button>
+      </ion-col>
+    </ion-row>
+	</ion-card>
+<!-- 
+	<ion-card *ngIf="type=='douban'">
+    <img src="{{movieDouban.image}}"/>
+    <ion-card-content>
+      <h2 class="card-title">
+        {{movieInfo.title}}
+      </h2>
+      <p>
+        {{movieInfo.description}}
+      </p>
+    </ion-card-content>
+    <div class="rating_box" item-right>
+      <span class="star-icon {{movieDouban.star1}}">☆</span>
+      <span class="star-icon {{movieDouban.star2}}">☆</span>
+      <span class="star-icon {{movieDouban.star3}}">☆</span>
+      <span class="star-icon {{movieDouban.star4}}">☆</span>
+      <span class="star-icon {{movieDouban.star5}}">☆</span>
+    </div>
+    <ion-row no-padding>
+      <ion-col>
+      <ion-badge item-right dark>{{movieDouban.vote}}/10</ion-badge>
+      </ion-col>
+      <ion-col text-right>
+        <button clear small dark>
+          <ion-icon name='happy'></ion-icon>
+          <span style="color: grey;">{{movieDouban.vote_count}} rated</span>
+        </button>
+      </ion-col>
+    </ion-row>
+	</ion-card>
+  -->
+</ion-content>

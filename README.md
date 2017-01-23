@@ -15,3 +15,9 @@ or
 ```
 ionic run android
 ```
+
+![Alt text](/img/MovieSearch_home.jpeg?raw=true "MovieSearch_home")
+
+![Alt text](/img/MovieSearch_detail.jpeg?raw=true "MovieSearch_detail")
+
+![Alt text](/img/MovieSearch_search.jpeg?raw=true "MovieSearch_search")
