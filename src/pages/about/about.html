@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>about</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="about_image">
+    <img src="assets/img/glass.svg" />
+  </div>
+  <ion-list >
+    <button ion-item *ngFor="let menu of menus" (click)="menuSelected(menu)">
+      {{ menu }}
+    </button> 
+  </ion-list>
+
+<!--   <ion-card>
+    <p>API used in this app are <a href="https://www.themoviedb.org/">The Movie DB</a> and <a href="https://developers.douban.com/wiki/?title=movie_v2"> 豆瓣(Douban)</a>.</p>
+    <p>SVG and Image used in this app are from <a href="https://inkscape.org">inkscape</a>.</p>
+  </ion-card> 
+  <p calss="about_footer" style="font-size: 10px;">&copy;<a href="http://lukegong.com">Xun Gong (Luke)</a><span style="color: grey"> All rights reserved.</span>
+  </p> -->
+</ion-content>

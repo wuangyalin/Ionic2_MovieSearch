@@ -1,12 +1,6 @@
 {
   "name": "MovieSearch",
-  "app_id": "1b0126d4",
+  "app_id": "",
   "v2": true,
-  "typescript": true,
-  "proxies": [
-    {
-      "path": "/movie",
-      "proxyUrl": "http://api.douban.com/v2/movie"
-    }
-  ]
+  "typescript": true
 }

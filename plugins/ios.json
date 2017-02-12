@@ -7,6 +7,9 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "io.ionic.starter"
+        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "io.ionic.starter"
         },
@@ -21,9 +24,6 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.ionicframework.moviesearch732501"
         }
     },
     "dependent_plugins": {}

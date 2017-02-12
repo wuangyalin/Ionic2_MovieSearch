@@ -1,0 +1,130 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides class="home_sildes">
+    <ion-slide *ngFor=" let slide of slidesMovie" (click)="selectMovie(slide)">
+      <img style="margin: 0 auto; width:250px; height:300px;" src="{{slide.image}}"/>
+          <ion-item >
+            <p class="slide_title">{{slide.title}}</p>
+            <p class="slide_date">{{slide.release_date}}</p>
+          <div class="rating_box" item-right>
+            <span class="star-icon {{slide.star1}}">☆</span>
+            <span class="star-icon {{slide.star2}}">☆</span>
+            <span class="star-icon {{slide.star3}}">☆</span>
+            <span class="star-icon {{slide.star4}}">☆</span>
+            <span class="star-icon {{slide.star5}}">☆</span>
+          </div>
+          </ion-item>
+    </ion-slide>
+  </ion-slides>
+
+      <h3>Upcoming</h3>
+      <div class="row_overflow">
+        <ion-row >
+          <ion-col *ngFor=" let movie of upcomingMovie " width-33>
+            <div class="list_box" (click)="selectMovie(movie)">
+              <img class="movie_img" src="{{movie.image}}">
+              <div>
+                <p class="movie_title">{{movie.title}}</p>
+                <p class="movie_subtitle">Release Date:{{movie.release_date}}</p>
+                <p class="rate_subtitle">
+                  <ion-badge style="font-size: 8px; " dark>{{movie.vote}}/10</ion-badge>
+                </p>
+                <div class="rating_box">
+                  <span class="star-icon {{movie.star1}}">☆</span>
+                  <span class="star-icon {{movie.star2}}">☆</span>
+                  <span class="star-icon {{movie.star3}}">☆</span>
+                  <span class="star-icon {{movie.star4}}">☆</span>
+                  <span class="star-icon {{movie.star5}}">☆</span>
+                </div>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <h3>Playing</h3>
+      <div class="row_overflow">
+        <ion-row>
+          <ion-col *ngFor=" let movie of playingMovie " width-33>
+            <div class="list_box" (click)="selectMovie(movie)">
+              <img class="movie_img" src="{{movie.image}}">
+              <div>
+                <p class="movie_title">{{movie.title}}</p>
+                <p class="movie_subtitle">Release Date:{{movie.release_date}}</p>
+                <p class="rate_subtitle">
+                  <ion-badge style="font-size: 8px; " dark>{{movie.vote}}/10</ion-badge>
+                </p>
+                <div class="rating_box">
+                  <span class="star-icon {{movie.star1}}">☆</span>
+                  <span class="star-icon {{movie.star2}}">☆</span>
+                  <span class="star-icon {{movie.star3}}">☆</span>
+                  <span class="star-icon {{movie.star4}}">☆</span>
+                  <span class="star-icon {{movie.star5}}">☆</span>
+                </div>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <h3>Top Rated</h3>
+      <div class="row_overflow">
+        <ion-row >
+          <ion-col *ngFor=" let movie of toprateMovie " width-33>
+            <div class="list_box" (click)="selectMovie(movie)">
+              <img class="movie_img" src="{{movie.image}}">
+              <div>
+                <p class="movie_title">{{movie.title}}</p>
+                <p class="movie_subtitle">Release Date:{{movie.release_date}}</p>
+                <p class="rate_subtitle">
+                  <ion-badge style="font-size: 8px; " dark>{{movie.vote}}/10</ion-badge>
+                </p>
+                <div class="rating_box">
+                  <span class="star-icon {{movie.star1}}">☆</span>
+                  <span class="star-icon {{movie.star2}}">☆</span>
+                  <span class="star-icon {{movie.star3}}">☆</span>
+                  <span class="star-icon {{movie.star4}}">☆</span>
+                  <span class="star-icon {{movie.star5}}">☆</span>
+                </div>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+      
+      <h3>Popular</h3>
+      <div class="row_overflow">
+        <ion-row >
+          <ion-col *ngFor=" let movie of popularMovie " width-33>
+            <div class="list_box" (click)="selectMovie(movie)">
+              <img class="movie_img" src="{{movie.image}}">
+              <div>
+                <p class="movie_title">{{movie.title}}</p>
+                <p class="movie_subtitle">Release Date:{{movie.release_date}}</p>
+                <p class="rate_subtitle">
+                  <ion-badge style="font-size: 8px; " dark>{{movie.vote}}/10</ion-badge>
+                </p>
+                <div class="rating_box">
+                  <span class="star-icon {{movie.star1}}">☆</span>
+                  <span class="star-icon {{movie.star2}}">☆</span>
+                  <span class="star-icon {{movie.star3}}">☆</span>
+                  <span class="star-icon {{movie.star4}}">☆</span>
+                  <span class="star-icon {{movie.star5}}">☆</span>
+                </div>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+</ion-content>
