@@ -3,7 +3,7 @@
 ---
 ##14/02/2017 UPDATED
 
-1. Added two them styles (dark and green).
+1. Added two them styles (dark and light).
 2. Fixed some layout bugs.
 
 ---
