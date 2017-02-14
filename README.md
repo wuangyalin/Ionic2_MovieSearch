@@ -1,4 +1,14 @@
 #MovieSearch with ionic 2
+---
+---
+##14/02/2017 UPDATED
+
+1. Added two them styles (dark and green).
+2. Fixed some layout bugs.
+
+---
+---
+
 ###How to use
 ```
 npm install
