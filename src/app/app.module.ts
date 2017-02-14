@@ -3,6 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Storage } from '@ionic/storage';
 import { MovieService } from '../providers/movie-service'
+import { SettingService } from '../providers/setting-service'
 
 import { AboutPage } from '../pages/about/about';
 import { HomePage } from '../pages/home/home';
@@ -40,6 +41,6 @@ import { GeneralPage } from '../pages/general/general';
     SettingPage,
     GeneralPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},Storage,MovieService]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},Storage,MovieService,SettingService]
 })
 export class AppModule {}

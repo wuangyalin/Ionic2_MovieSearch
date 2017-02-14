@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {MovieService} from '../../providers/movie-service';
 import {MovieDetailPage} from '../movie-detail/movie-detail';
+import { SettingService } from '../../providers/setting-service'
 
 @Component({
   selector: 'page-home',
@@ -16,8 +17,9 @@ export class HomePage {
   private slidesMovie: Array<any>;
   private rows: any;
   private classify: string = "upcomming";
+  private theme_color: any;
 
-  constructor(private nav: NavController, private _ms: MovieService) {
+  constructor(private setting: SettingService, private nav: NavController, private _ms: MovieService) {
     this.slidesMovie = [];
     this.upcomingMovie = [];
     this.playingMovie = [];
@@ -30,6 +32,14 @@ export class HomePage {
     this.playingMovie = this.getMovies('now_playing');
     this.popularMovie = this.getMovies('popular');
     this.toprateMovie = this.getMovies('top_rated');
+    this.setting.getTheme().subscribe(val => {
+      if(val == 'dark-theme'){
+        console.log('dark-theme');
+        this.theme_color = 'dark';
+      }else if(val == 'light-theme'){
+        this.theme_color = 'light';
+      }
+    });
   }
 
   getMovies(type: string){

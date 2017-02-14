@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { SettingService } from '../../providers/setting-service'
 
 /*
   Generated class for the General page.
@@ -12,8 +13,18 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'general.html'
 })
 export class GeneralPage {
+  private theme_color: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(private setting: SettingService,public navCtrl: NavController, public navParams: NavParams) {
+      this.setting.getTheme().subscribe(val => {
+      if(val == 'dark-theme'){
+        console.log('dark-theme');
+        this.theme_color = 'dark';
+      }else if(val == 'light-theme'){
+        this.theme_color = 'light';
+      }
+    });
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GeneralPage');

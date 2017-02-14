@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { MovieService } from '../../providers/movie-service';
 import {MovieDetailPage} from '../movie-detail/movie-detail';
+import { SettingService } from '../../providers/setting-service'
 
 /*
   Generated class for the Search page.
@@ -19,8 +20,20 @@ export class SearchPage {
   private resultsIMDB: Array<any>;
   private type: string = "imdb";
   private rows: any;
+  private theme_color: any;
+  private theme_color_reverse: any;
+  constructor(private setting: SettingService,private _nav: NavController, private _ms: MovieService) {
+        this.setting.getTheme().subscribe(val => {
+      if(val == 'dark-theme'){
+        this.theme_color = 'dark';
+        this.theme_color_reverse = 'light';
+      }else if(val == 'light-theme'){
+        this.theme_color = 'light';
+        this.theme_color_reverse = 'dark';
 
-  constructor(private _nav: NavController, private _ms: MovieService) {}
+      }
+    });
+  }
 
   searchMovie(query: string){
   if(query.length > 1)  {

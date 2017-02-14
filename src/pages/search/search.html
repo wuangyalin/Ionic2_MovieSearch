@@ -1,6 +1,5 @@
 <ion-header>
-
-  <ion-navbar>
+  <ion-navbar [color]="theme_color">
     <ion-title>MovieList</ion-title>
   </ion-navbar>
 
@@ -8,7 +7,7 @@
 
 <ion-content >
   <ion-toolbar >
-    <ion-segment [(ngModel)]="type" color="dark">
+    <ion-segment [color]="theme_color_reverse" [(ngModel)]="type">
       <ion-segment-button value="imdb">
         TMDB
       </ion-segment-button>
@@ -17,9 +16,10 @@
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
-  <ion-card>
-    <ion-input #query type="text" placeholder="Search movie at here..." (input)="searchMovie(query.value)"></ion-input>
-  </ion-card>
+    <ion-item>
+      <ion-label floating>Search movie</ion-label>
+      <ion-input #query type="text" (input)="searchMovie(query.value)"></ion-input>
+    </ion-item>
     <div [ngSwitch]="type">
       <ion-list *ngSwitchCase="'imdb'">
         <ion-row *ngFor=" let i of rows; ">

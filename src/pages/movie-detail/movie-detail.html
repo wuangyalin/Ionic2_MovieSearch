@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar [color]="theme_color">
     <ion-title>MovieDetail</ion-title>
   </ion-navbar>
 
@@ -33,10 +33,10 @@
     </div>
     <ion-row no-padding>
       <ion-col>
-      <ion-badge item-right dark>{{movieInfo.vote}}/10</ion-badge>
+      <ion-badge item-right color="dark">{{movieInfo.vote}}/10</ion-badge>
       </ion-col>
       <ion-col text-right>
-        <button clear small dark>
+        <button clear small color="dark">
           <ion-icon name='happy'></ion-icon>
           <span style="color: grey;">{{movieInfo.vote_count}} rated</span>
         </button>

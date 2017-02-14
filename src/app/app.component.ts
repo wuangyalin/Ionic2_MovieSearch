@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { Storage } from '@ionic/storage';
+import { SettingService } from '../providers/setting-service'
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { SplashPage } from '../pages/splash/splash';
@@ -13,8 +14,10 @@ import { SplashPage } from '../pages/splash/splash';
 })
 export class MyApp {
   rootPage: any;
+  chosenTheme: any;
 
-  constructor(platform: Platform, storage: Storage) {
+  constructor(platform: Platform, storage: Storage, private setting: SettingService) {
+    this.setting.getTheme().subscribe(val => this.chosenTheme = val);
     //storage.remove('introShown');
     storage.get('introShown').then((result)=>{
       if(result){

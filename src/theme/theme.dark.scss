@@ -1,0 +1,17 @@
+.dark-theme{
+  $colors: (
+    custom: #222
+  );
+  h1, h2, h3, h4,p,i.icon{
+    color: #fff;
+  }
+  ion-list > button, ion-segment, ion-card, ion-item,ion-content {
+    background-color: #222;
+  }
+  ion-label{
+    color: #fff;
+  }
+  ion-input{
+    background-color: #555;
+  }
+}
