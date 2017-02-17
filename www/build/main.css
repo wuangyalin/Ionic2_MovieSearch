@@ -23660,7 +23660,7 @@ page-about ion-list {
 
 .star-icon {
   color: #ddd;
-  font-size: 13.4px;
+  font-size: 14px;
   position: relative;
 }
 
@@ -23706,8 +23706,17 @@ page-about ion-list {
   height: 150px;
 }
 
+ion-row {
+  max-width: 500px;
+}
+
 /**************movie box part end****************/
 page-search .listed_item:hover {
   background-color: #aaa;
   cursor: pointer;
+}
+
+page-search .search_items, page-search .search_bar {
+  max-width: 500px;
+  margin: 0 auto;
 }

@@ -27,7 +27,7 @@ import { GeneralPage } from '../pages/general/general';
     GeneralPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{ mode: 'ios' })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -16,13 +16,13 @@
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
-    <ion-item>
+    <ion-item class="search_bar">
       <ion-label floating>Search movie</ion-label>
       <ion-input #query type="text" (input)="searchMovie(query.value)"></ion-input>
     </ion-item>
     <div [ngSwitch]="type">
       <ion-list *ngSwitchCase="'imdb'">
-        <ion-row *ngFor=" let i of rows; ">
+        <ion-row class="search_items" *ngFor=" let i of rows; ">
           <ion-col *ngFor=" let movie of resultsIMDB | slice:(i*3):(i+1)*3" width-33>
             <div class="list_box" (click)="selectMovie(movie)">
               <img class="movie_img" src="{{movie.image}}">

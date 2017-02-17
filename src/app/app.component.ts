@@ -17,6 +17,9 @@ export class MyApp {
   chosenTheme: any;
 
   constructor(platform: Platform, storage: Storage, private setting: SettingService) {
+    storage.get('current-theme').then((result)=>{
+      this.setting.setTheme(result);
+    });
     this.setting.getTheme().subscribe(val => this.chosenTheme = val);
     //storage.remove('introShown');
     storage.get('introShown').then((result)=>{

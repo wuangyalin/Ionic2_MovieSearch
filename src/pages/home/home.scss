@@ -47,7 +47,7 @@ page-home {
   }
   .star-icon{
       color: #ddd;
-      font-size: 13.4px;
+      font-size: 14px;
       position: relative;
   }
   .star-icon.full:before {
@@ -84,5 +84,8 @@ page-home {
     margin: 0 auto;
     width: 100% !important;
     height: 150px;
+  }
+  ion-row{
+    max-width: 500px;
   }
   /**************movie box part end****************/
