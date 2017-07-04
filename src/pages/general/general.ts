@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { SettingService } from '../../providers/setting-service'
+import { SettingServiceProvider } from '../../providers/setting-service/setting-service';
 
 /*
   Generated class for the General page.
@@ -15,7 +15,7 @@ import { SettingService } from '../../providers/setting-service'
 export class GeneralPage {
   private theme_color: any;
 
-  constructor(private setting: SettingService,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private setting: SettingServiceProvider,public navCtrl: NavController, public navParams: NavParams) {
       this.setting.getTheme().subscribe(val => {
       if(val == 'dark-theme'){
         console.log('dark-theme');

@@ -1,22 +1,20 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { HomePage } from '../pages/home/home';
 import { Storage } from '@ionic/storage';
-import { SettingService } from '../providers/setting-service'
 
+import { SettingServiceProvider } from "../providers/setting-service/setting-service";
 import { TabsPage } from '../pages/tabs/tabs';
 import { SplashPage } from '../pages/splash/splash';
-
-
-
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any;
+  rootPage:any = HomePage;
   chosenTheme: any;
-
-  constructor(platform: Platform, storage: Storage, private setting: SettingService) {
+  constructor(platform: Platform,storage: Storage, statusBar: StatusBar, splashScreen: SplashScreen,private setting: SettingServiceProvider) {
     storage.get('current-theme').then((result)=>{
       this.setting.setTheme(result);
     });
@@ -34,8 +32,9 @@ export class MyApp {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      StatusBar.styleDefault();
-      Splashscreen.hide();
+      statusBar.styleDefault();
+      splashScreen.hide();
     });
   }
 }
+

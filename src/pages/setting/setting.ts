@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import { NavController, NavParams,AlertController } from 'ionic-angular';
-import { SettingService } from '../../providers/setting-service';
 import { Storage } from '@ionic/storage';
+import { SettingServiceProvider } from '../../providers/setting-service/setting-service';
 
 /*
   Generated class for the Setting page.
@@ -19,7 +19,7 @@ export class SettingPage {
   private theme_color: any;
   private currentTheme: any;
 
-  constructor(private storage: Storage, private setting: SettingService, public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
+  constructor(private storage: Storage, private setting: SettingServiceProvider, public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
     this.setting.getTheme().subscribe(val => {
       this.selected = val;
       storage.set('current-theme',val);

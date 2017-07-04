@@ -1,10 +1,11 @@
 page-search {
-  .listed_item:hover{
-    background-color: #aaa;
-    cursor: pointer;
-  }
-  .search_items, .search_bar{
-    max-width: 500px;
-    margin: 0 auto;
-  }
+    .listed_item:hover {
+        background-color: #aaa;
+        cursor: pointer;
+    }
+    .search_items,
+    .search_bar {
+        max-width: 500px;
+        margin: 0 auto;
+    }
 }

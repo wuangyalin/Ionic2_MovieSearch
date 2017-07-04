@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { MovieService } from '../../providers/movie-service'
-import { SettingService } from '../../providers/setting-service'
+import { SettingServiceProvider } from '../../providers/setting-service/setting-service';
+import { MovieServiceProvider } from '../../providers/movie-service/movie-service';
 
 /*
   Generated class for the MovieDetail page.
@@ -19,7 +19,7 @@ export class MovieDetailPage {
   private type: string;
   private rows: any;
   private theme_color: any;
-    constructor(private setting: SettingService,private nav: NavController, private np: NavParams,private _ms: MovieService) {
+    constructor(private setting: SettingServiceProvider,private nav: NavController, private np: NavParams,private _ms: MovieServiceProvider) {
       this.type = np.get('type');
       if(this.type == 'imdb')
         this.movieInfo = np.get('movieimdb');
@@ -27,7 +27,6 @@ export class MovieDetailPage {
         this.movieInfo = np.get('moviedouban');
       this.setting.getTheme().subscribe(val => {
         if(val == 'dark-theme'){
-          console.log('dark-theme');
           this.theme_color = 'dark';
         }else if(val == 'light-theme'){
           this.theme_color = 'light';

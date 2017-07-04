@@ -1,6 +1,5 @@
 {
-  "name": "MovieSearch",
+  "name": "Ionic2_MovieSearch",
   "app_id": "",
-  "v2": true,
-  "typescript": true
+  "type": "ionic-angular"
 }

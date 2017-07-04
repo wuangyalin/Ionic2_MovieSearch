@@ -6,24 +6,23 @@
 -->
 <ion-header>
 
-  <ion-navbar [color]="theme_color">
-    <ion-title>setting</ion-title>
-  </ion-navbar>
+    <ion-navbar [color]="theme_color">
+        <ion-title>setting</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-<ion-list no-border>
-    <ion-list-header>
-      Theme Change
-    </ion-list-header>
-    <ion-item>
-      <i class="icon iconfont luke_icons-theme" item-left></i>      
-      Change Theme
-      <ion-note item-right>
-        <button ion-button small color="light" (click)="setTheme()">Change</button>
-      </ion-note>
-    </ion-item>
-  </ion-list>
+    <ion-list no-border>
+        <ion-list-header>
+            Theme Change
+        </ion-list-header>
+        <ion-item>
+            <i class="icon iconfont luke_icons-theme" item-left></i> Change Theme
+            <ion-note item-right>
+                <button ion-button small color="light" (click)="setTheme()">Change</button>
+            </ion-note>
+        </ion-item>
+    </ion-list>
 </ion-content>

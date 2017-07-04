@@ -5,13 +5,14 @@ import {Platform} from 'ionic-angular';
 import 'rxjs/add/operator/map';
 
 /*
-  Generated class for the MovieService provider.
+  Generated class for the MovieServiceProvider provider.
 
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
+  for more info on providers and Angular DI.
 */
 @Injectable()
-export class MovieService {
+export class MovieServiceProvider {
+
   data: Array<any>;
   private api_key: string = 'bd7f4410a88b17e5e0ed2c4139630137';
   private baseUrl: string;
@@ -23,7 +24,7 @@ export class MovieService {
       // This will only print when on web
       this.baseUrl = "/movie";
     }else{
-      this.baseUrl = "http://api.douban.com/v2/movie";
+      this.baseUrl = "https://api.douban.com/v2/movie";
     }
   }
 
@@ -44,20 +45,14 @@ export class MovieService {
     let response = this.http.get(url).map(res => res.json());
     return response;
   }
-  slide_movies(){
-    //let url = 'https://api.themoviedb.org/3/discover/movie?primary_release_year='+year+'&sort_by=vote_average.desc'+'&api_key='+this.api_key;
-    let url = 'http://api.themoviedb.org/3/discover/movie?primary_release_year=2016&api_key=bd7f4410a88b17e5e0ed2c4139630137';
-    let response = this.http.get(url).map(res => res.json());
-    return response;
-  }
   home_movies(type: string){
     let url: string = '';
     if(type=='slide') 
-      url = 'http://api.themoviedb.org/3/discover/movie?primary_release_year=2016&api_key=bd7f4410a88b17e5e0ed2c4139630137';
+      url = 'https://api.themoviedb.org/3/discover/movie?primary_release_year=2017&api_key=bd7f4410a88b17e5e0ed2c4139630137';
     else url = this.baseUrl_TMDB+type+'?api_key='+this.api_key;
     //console.log(url);
     let response = this.http.get(url).map(res => res.json());
     return response;
   }
-}
 
+}

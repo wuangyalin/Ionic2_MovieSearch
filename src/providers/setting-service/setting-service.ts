@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs/Rx';
   for more info on providers and Angular 2 DI.
 */
 @Injectable()
-export class SettingService {
+export class SettingServiceProvider {
   private theme: BehaviorSubject<String>;
   availableThemes: {className: string, prettyName: string}[];
 
@@ -22,9 +22,6 @@ export class SettingService {
 
 
   setTheme(val) {
-        // When you've wired in your persistence layer,
-        // you would send it an updated theme value here.
-        // for now we're just doing things in-memory
         this.theme.next(val);
     }
 

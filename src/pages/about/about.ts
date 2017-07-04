@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 import { NavController, AlertController} from 'ionic-angular';
+import { SettingServiceProvider } from '../../providers/setting-service/setting-service';
 import { GeneralPage } from '../general/general';
 import { SettingPage } from '../setting/setting';
-import { SettingService } from '../../providers/setting-service'
 
 @Component({
   selector: 'page-about',
@@ -13,7 +13,7 @@ export class AboutPage {
   menus: any;
   private theme_color: any;
 
-  constructor(private setting: SettingService,public navCtrl: NavController, public alertCtrl: AlertController) {
+  constructor(private setting: SettingServiceProvider,public navCtrl: NavController, public alertCtrl: AlertController) {
     this.menus = ['General','version','setting','contact'];
     this.setting.getTheme().subscribe(val => {
       if(val == 'dark-theme'){

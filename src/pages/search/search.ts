@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { MovieService } from '../../providers/movie-service';
-import {MovieDetailPage} from '../movie-detail/movie-detail';
-import { SettingService } from '../../providers/setting-service'
+import { MovieDetailPage } from '../movie-detail/movie-detail';
+import { SettingServiceProvider } from '../../providers/setting-service/setting-service';
+import { MovieServiceProvider } from '../../providers/movie-service/movie-service';
 
 /*
   Generated class for the Search page.
@@ -22,7 +22,7 @@ export class SearchPage {
   private rows: any;
   private theme_color: any;
   private theme_color_reverse: any;
-  constructor(private setting: SettingService,private _nav: NavController, private _ms: MovieService) {
+  constructor(private setting: SettingServiceProvider,private _nav: NavController, private _ms: MovieServiceProvider) {
         this.setting.getTheme().subscribe(val => {
       if(val == 'dark-theme'){
         this.theme_color = 'dark';

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
-import {MovieService} from '../../providers/movie-service';
-import {MovieDetailPage} from '../movie-detail/movie-detail';
-import { SettingService } from '../../providers/setting-service'
+import { SettingServiceProvider } from '../../providers/setting-service/setting-service';
+import { MovieServiceProvider } from '../../providers/movie-service/movie-service';
+import { MovieDetailPage } from '../movie-detail/movie-detail';
 
 @Component({
   selector: 'page-home',
@@ -19,7 +19,7 @@ export class HomePage {
   private classify: string = "upcomming";
   private theme_color: any;
 
-  constructor(private setting: SettingService, private nav: NavController, private _ms: MovieService) {
+  constructor(private setting: SettingServiceProvider, private nav: NavController, private _ms: MovieServiceProvider) {
     this.slidesMovie = [];
     this.upcomingMovie = [];
     this.playingMovie = [];
