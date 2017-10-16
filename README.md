@@ -3,7 +3,7 @@
 ---
 ##16/10/2017 UPDATED
 1. Updated to latest ionic version
-2. Added youtube video triler function for each movie
+2. Added youtube video trailer function for each movie
 ---
 ---
 ##14/02/2017 UPDATED
