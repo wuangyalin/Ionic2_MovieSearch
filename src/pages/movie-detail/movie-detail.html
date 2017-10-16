@@ -37,4 +37,13 @@
             </ion-col>
         </ion-row>
     </ion-card>
+    <ion-list>
+        <div class="card" *ngFor="let trilerLink of trilerLinks">
+            <ion-item>
+                <div class="video-container">
+                    <iframe [src]="trilerLink | youtube" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>
+                </div>
+            </ion-item>
+        </div>
+    </ion-list>
 </ion-content>

@@ -16,7 +16,6 @@ export class HomePage {
   private popularMovie: Array<any>;
   private slidesMovie: Array<any>;
   private rows: any;
-  private classify: string = "upcomming";
   private theme_color: any;
 
   constructor(private setting: SettingServiceProvider, private nav: NavController, private _ms: MovieServiceProvider) {
@@ -58,6 +57,7 @@ export class HomePage {
             vote: movie.vote_average,
             vote_count: movie.vote_count,
             description: movie.overview,
+            id: movie.id,
             star1: rates[0],
             star2: rates[1],
             star3: rates[2],
@@ -76,13 +76,14 @@ export class HomePage {
     );
     return return_movies;
   }
-  selectMovie(movie: any,type: string){
+  selectMovie(movie: any,movie_id: string,type: string){
     type = type || 'imdb';
-    console.log(type);
+    //console.log(movie_id);
     this.nav.push(MovieDetailPage, {
       movieimdb: movie,
       moviedouban: movie,
-      type: type
+      type: type,
+      id: movie_id
     }); 
   }
   setRate(rate: string){

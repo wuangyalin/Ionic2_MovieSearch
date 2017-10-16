@@ -17,7 +17,6 @@ export class SettingPage {
   availableThemes: {className: string, prettyName: string}[];
   selected: String;
   private theme_color: any;
-  private currentTheme: any;
 
   constructor(private storage: Storage, private setting: SettingServiceProvider, public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
     this.setting.getTheme().subscribe(val => {

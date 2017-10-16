@@ -15,8 +15,8 @@ import { SearchPage } from '../pages/search/search';
 import { AboutPage } from '../pages/about/about';
 import { GeneralPage } from '../pages/general/general';
 import { SettingPage } from '../pages/setting/setting';
-  import { IonicStorageModule } from '@ionic/storage';
-
+import { IonicStorageModule } from '@ionic/storage';
+import { YoutubePipe } from '../pipes/youtube/youtube';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { SettingPage } from '../pages/setting/setting';
     SearchPage,
     AboutPage,
     GeneralPage,
-    SettingPage
+    SettingPage,
+    YoutubePipe
   ],
   imports: [
     BrowserModule,

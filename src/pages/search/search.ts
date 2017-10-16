@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { MovieDetailPage } from '../movie-detail/movie-detail';
 import { SettingServiceProvider } from '../../providers/setting-service/setting-service';
 import { MovieServiceProvider } from '../../providers/movie-service/movie-service';
@@ -18,7 +18,6 @@ import { MovieServiceProvider } from '../../providers/movie-service/movie-servic
 export class SearchPage {
   private resultsDouban: Array<any>;
   private resultsIMDB: Array<any>;
-  private type: string = "imdb";
   private rows: any;
   private theme_color: any;
   private theme_color_reverse: any;

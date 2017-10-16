@@ -15,15 +15,21 @@ import { MovieServiceProvider } from '../../providers/movie-service/movie-servic
 })
 export class MovieDetailPage {
   private movieInfo: {};
-  private movieDouban: {}
+  private trilerLinks: Array<string> = [];
   private type: string;
-  private rows: any;
   private theme_color: any;
     constructor(private setting: SettingServiceProvider,private nav: NavController, private np: NavParams,private _ms: MovieServiceProvider) {
       this.type = np.get('type');
-      if(this.type == 'imdb')
+      if(this.type == 'imdb'){
         this.movieInfo = np.get('movieimdb');
-      else
+        let id = np.get('id');
+        this._ms.movie_trailer(id).subscribe(data=>{
+          let results = data.results;
+          for(let result of results){
+            this.trilerLinks.push('https://www.youtube.com/embed/'+result.key);
+          }
+        })
+      }else
         this.movieInfo = np.get('moviedouban');
       this.setting.getTheme().subscribe(val => {
         if(val == 'dark-theme'){

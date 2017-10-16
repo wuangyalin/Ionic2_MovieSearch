@@ -55,4 +55,12 @@ export class MovieServiceProvider {
     return response;
   }
 
+  movie_trailer(id: string){
+    let url: string = '';
+    url = this.baseUrl_TMDB + id + '/videos?api_key='+this.api_key;
+    console.log(url);
+    let response = this.http.get(url).map(res => res.json());
+    return response;
+  }
+
 }

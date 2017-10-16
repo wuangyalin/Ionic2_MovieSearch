@@ -12,7 +12,7 @@
 
 <ion-content padding>
     <ion-slides class="home_sildes">
-        <ion-slide *ngFor=" let slide of slidesMovie" (click)="selectMovie(slide)">
+        <ion-slide *ngFor=" let slide of slidesMovie" (click)="selectMovie(slide,slide.id)">
             <img style="margin: 0 auto; width:250px; height:300px;" src="{{slide.image}}" />
             <ion-item>
                 <p class="slide_title">{{slide.title}}</p>
@@ -32,7 +32,7 @@
     <div class="row_overflow">
         <ion-row nowrap>
             <ion-col *ngFor=" let movie of upcomingMovie " col-4>
-                <div class="list_box" (click)="selectMovie(movie)">
+                <div class="list_box" (click)="selectMovie(movie,movie.id)">
                     <img class="movie_img" src="{{movie.image}}">
                     <div>
                         <p class="movie_title">{{movie.title}}</p>
@@ -57,7 +57,7 @@
     <div class="row_overflow">
         <ion-row nowrap>
             <ion-col *ngFor=" let movie of playingMovie " col-4>
-                <div class="list_box" (click)="selectMovie(movie)">
+                <div class="list_box" (click)="selectMovie(movie,movie.id)">
                     <img class="movie_img" src="{{movie.image}}">
                     <div>
                         <p class="movie_title">{{movie.title}}</p>
@@ -82,7 +82,7 @@
     <div class="row_overflow">
         <ion-row nowrap>
             <ion-col *ngFor=" let movie of toprateMovie " col-4>
-                <div class="list_box" (click)="selectMovie(movie)">
+                <div class="list_box" (click)="selectMovie(movie,movie.id)">
                     <img class="movie_img" src="{{movie.image}}">
                     <div>
                         <p class="movie_title">{{movie.title}}</p>
@@ -107,7 +107,7 @@
     <div class="row_overflow">
         <ion-row nowrap>
             <ion-col *ngFor=" let movie of popularMovie " col-4>
-                <div class="list_box" (click)="selectMovie(movie)">
+                <div class="list_box" (click)="selectMovie(movie,movie.id)">
                     <img class="movie_img" src="{{movie.image}}">
                     <div>
                         <p class="movie_title">{{movie.title}}</p>
