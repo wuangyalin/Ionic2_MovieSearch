@@ -81,7 +81,6 @@ export class HomePage {
     //console.log(movie_id);
     this.nav.push(MovieDetailPage, {
       movieimdb: movie,
-      moviedouban: movie,
       type: type,
       id: movie_id
     }); 

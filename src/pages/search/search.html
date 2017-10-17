@@ -24,7 +24,7 @@
         <ion-list *ngSwitchCase="'imdb'">
             <ion-row class="search_items" *ngFor=" let i of rows; ">
                 <ion-col *ngFor=" let movie of resultsIMDB | slice:(i*3):(i+1)*3" width-33>
-                    <div class="list_box" (click)="selectMovie(movie)">
+                    <div class="list_box" (click)="selectMovie(movie,movie.id)">
                         <img class="movie_img" src="{{movie.image}}">
                         <div>
                             <p class="movie_title">{{movie.title}}</p>
@@ -48,7 +48,7 @@
         <ion-list *ngSwitchCase="'douban'">
             <ion-row *ngFor=" let i of rows; ">
                 <ion-col *ngFor=" let movie of resultsDouban | slice:(i*3):(i+1)*3" width-33>
-                    <div class="list_box" (click)="selectMovie(movie,type)">
+                    <div class="list_box" (click)="selectMovie(movie,movie.id,type)">
                         <img class="movie_img" src="{{movie.image}}">
                         <div>
                             <p class="movie_title">{{movie.title}}</p>

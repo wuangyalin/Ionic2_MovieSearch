@@ -37,7 +37,7 @@ export class SearchPage {
   searchMovie(query: string){
   if(query.length > 1)  {
     this.resultsIMDB = this.getTmdbMovies(query);
-    this.resultsDouban = this.getDoubanMovies(query);
+    //this.resultsDouban = this.getDoubanMovies(query);
    }
   }
 
@@ -57,6 +57,7 @@ export class SearchPage {
             vote: movie.vote_average,
             vote_count: movie.vote_count,
             description: movie.overview,
+            id: movie.id,
             star1: rates[0],
             star2: rates[1],
             star3: rates[2],
@@ -144,12 +145,14 @@ export class SearchPage {
       );
       console.log('return_movies'+return_movies);
     }
-  selectMovie(movie: any,type: string){
+  selectMovie(movie: any,movie_id: string,type: string){
     type = type || 'imdb';
+    console.log(movie_id);
     if(type == 'imdb'){
       this._nav.push(MovieDetailPage, {
         movieimdb: movie,
-        type: type
+        type: type,
+        id: movie_id
       }); 
     }else{ 
       this.getDoubanMovieDetail(movie.id,type);
