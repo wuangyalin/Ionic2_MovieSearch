@@ -17,7 +17,7 @@
 ### Dark Style
 <img src="src/assets/img/dark.jpeg" width="300">
 ### lignt Style
-<img src="src/assets/img/lignt.jpeg" width="300">
+<img src="src/assets/img/light.jpeg" width="300">
 
 ---
 ---
