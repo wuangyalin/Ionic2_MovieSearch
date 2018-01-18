@@ -48,7 +48,7 @@ export class MovieServiceProvider {
   home_movies(type: string){
     let url: string = '';
     if(type=='slide') 
-      url = 'https://api.themoviedb.org/3/discover/movie?primary_release_year=2017&api_key=bd7f4410a88b17e5e0ed2c4139630137';
+      url = 'https://api.themoviedb.org/3/discover/movie?primary_release_year=2018&api_key=bd7f4410a88b17e5e0ed2c4139630137';
     else url = this.baseUrl_TMDB+type+'?api_key='+this.api_key;
     //console.log(url);
     let response = this.http.get(url).map(res => res.json());
